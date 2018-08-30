@@ -22,6 +22,7 @@ public class JuegoPersonalizado extends AppCompatActivity {
 
         numer=String.valueOf(getIntent().getExtras().getString("tipo"));
         time=String.valueOf(getIntent().getExtras().getString("tiempo"));
+
         tiempo.setText(time);
         numero.setText(numer);
         configurar=Integer.parseInt(String.valueOf(getIntent().getExtras().getInt("tipo")));
