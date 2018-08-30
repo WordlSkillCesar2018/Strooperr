@@ -33,12 +33,26 @@ public class Configurar extends AppCompatActivity {
     }
 
     public void siguiente(View view) {
-        String configuracion = editText.getText().toString();
-        String tiempo=editText2.getText().toString();
-        Intent intent=new Intent(this, JuegoPersonalizado.class);
-        intent.putExtra("tipo",configurar);
-        intent.putExtra("configuracion", configuracion);
-        intent.putExtra("tiempo", tiempo);
-        startActivity(intent);
+        //juego por tiempo
+        if (configurar==1){
+            String configuracion = editText.getText().toString();
+            String tiempopalabra=editText2.getText().toString();
+            Intent intent=new Intent(this, JuegoPersonalizado.class);
+//            intent.putExtra("tipo",configurar);
+            intent.putExtra("duracion", configuracion);
+            intent.putExtra("tiempo", tiempopalabra);
+            startActivity(intent);
+        }else
+            //juego por intentos
+            if (configurar==2){
+            String configuracion = editText.getText().toString();
+            String tiempopalabra=editText2.getText().toString();
+            Intent intent=new Intent(this, JuegoPersonalizado2.class);
+//            intent.putExtra("tipo",configurar);
+            intent.putExtra("intentos", configuracion);
+            intent.putExtra("tiempo", tiempopalabra);
+            startActivity(intent);
+        }
+
     }
 }

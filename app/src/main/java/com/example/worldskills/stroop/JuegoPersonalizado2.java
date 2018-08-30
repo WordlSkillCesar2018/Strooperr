@@ -1,20 +1,19 @@
 package com.example.worldskills.stroop;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class Juego extends AppCompatActivity {
-
+public class JuegoPersonalizado2 extends AppCompatActivity {
+    int duracion;
+    TextView textView1, textView2, numero, tiempo1;
+    int numer, time;
     String[] colores = new String[] {"yellow","blue","red","green"};
     String[] colortext = new String[]{"Amarillo","Azul","Rojo","Verde"};
     TextView texto,tiempo,intentos,ganadas,perdidas,comparar;
@@ -24,10 +23,19 @@ public class Juego extends AppCompatActivity {
     int perdida;
     int intento=3;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_juego);
+        setContentView(R.layout.activity_juego_personalizado2);
+
+        duracion=getIntent().getExtras().getInt("duracion");
+        time=getIntent().getExtras().getInt("tiempo");
+
+        tiempo1.setText(time);
+        numero.setText(numer);
+        //configurar=Integer.parseInt(String.valueOf(getIntent().getExtras().getInt("tipo")));
+
         texto = findViewById(R.id.textocolor);
         tiempo = findViewById(R.id.textView);
         ganadas = findViewById(R.id.textView3);
@@ -43,10 +51,10 @@ public class Juego extends AppCompatActivity {
         perdidas.setText("Perdidos: 0");
         intentos.setText("Intentos: 3");
         ganadas.setText("Ganadas: 0");
-       texto.setTextColor(Color.parseColor(colores[0]));
-       comparar = findViewById(R.id.textView6);
-       comparar.setText(colores[0]);
-       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        texto.setTextColor(Color.parseColor(colores[0]));
+        comparar = findViewById(R.id.textView6);
+        comparar.setText(colores[0]);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     public void color1(View view) {
@@ -65,7 +73,7 @@ public class Juego extends AppCompatActivity {
             ganadas.setText("Ganadas: "+aciertos);
         }else{
             if (perdida>2) {
-                Intent intent = new Intent(Juego.this,Resultado.class);
+                Intent intent = new Intent(this,Resultado.class);
                 intent.putExtra("ganada",aciertos);
                 intent.putExtra("perdida",perdida);
                 intent.putExtra("intentos",intento);
@@ -113,7 +121,7 @@ public class Juego extends AppCompatActivity {
             ganadas.setText("Ganadas: "+aciertos);
         }else{
             if (perdida>2) {
-                Intent intent = new Intent(Juego.this,Resultado.class);
+                Intent intent = new Intent(this,Resultado.class);
                 intent.putExtra("ganada",aciertos);
                 intent.putExtra("perdida",perdida);
                 intent.putExtra("intentos",intento);
@@ -161,7 +169,7 @@ public class Juego extends AppCompatActivity {
             ganadas.setText("Ganadas: "+aciertos);
         }else{
             if (perdida>2) {
-                Intent intent = new Intent(Juego.this,Resultado.class);
+                Intent intent = new Intent(this,Resultado.class);
                 intent.putExtra("ganada",aciertos);
                 intent.putExtra("perdida",perdida);
                 intent.putExtra("intentos",intento);
@@ -209,7 +217,7 @@ public class Juego extends AppCompatActivity {
             ganadas.setText("Ganadas: "+aciertos);
         }else{
             if (perdida>2) {
-                Intent intent = new Intent(Juego.this,Resultado.class);
+                Intent intent = new Intent(this,Resultado.class);
                 intent.putExtra("ganada",aciertos);
                 intent.putExtra("perdida",perdida);
                 intent.putExtra("intentos",intento);
@@ -313,7 +321,7 @@ public class Juego extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Intent intent = new Intent(Juego.this,Resultado.class);
+                Intent intent = new Intent(JuegoPersonalizado2.this,Resultado.class);
                 intent.putExtra("ganada",aciertos);
                 intent.putExtra("perdida",perdida);
                 intent.putExtra("intentos",intento);
@@ -340,15 +348,15 @@ public class Juego extends AppCompatActivity {
                 b=String.valueOf(intento);
                 perdidas.setText("Perdidos: "+a);
                 intentos.setText("Intentos: "+b);
-                if (perdida>2){
-                    Intent intent = new Intent(Juego.this,Resultado.class);
+                if (perdida>time){
+                    Intent intent = new Intent(JuegoPersonalizado2.this,Resultado.class);
                     intent.putExtra("ganada",aciertos);
                     intent.putExtra("perdida",perdida);
                     intent.putExtra("intentos",intento);
                     startActivity(intent);
-                   countDownTimer.cancel();
-                   countDownTimer1.cancel();
-                   finish();
+                    countDownTimer.cancel();
+                    countDownTimer1.cancel();
+                    finish();
                 }else{
                     duraciondecambio();
                 }

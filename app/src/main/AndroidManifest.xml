@@ -22,7 +22,9 @@
         <activity android:name=".Juego" />
         <activity android:name=".Personalizado" />
         <activity android:name=".Configurar" />
-        <activity android:name=".JuegoPersonalizado"></activity>
+        <activity android:name=".JuegoPersonalizado" />
+        <activity android:name=".Resultado" />
+        <activity android:name=".JuegoPersonalizado2"></activity>
     </application>
 
 </manifest>
