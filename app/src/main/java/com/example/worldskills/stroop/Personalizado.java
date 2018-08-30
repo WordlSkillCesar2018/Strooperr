@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class Personalizado extends AppCompatActivity {
     RadioButton radioButton1, radioButton2;
@@ -26,6 +27,9 @@ public class Personalizado extends AppCompatActivity {
             Intent intentos=new Intent(this, Configurar.class);
             intentos.putExtra("tipo", "Ingrese Numero de Intentos");
             startActivity(intentos);
+        }
+        else {
+            Toast.makeText(this,"Seleccione una opcion", Toast.LENGTH_SHORT).show();
         }
     }
 }

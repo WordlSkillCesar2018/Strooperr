@@ -64,6 +64,7 @@ public class Juego extends AppCompatActivity {
     public void cambios(){
         String a = "android.graphics.drawable.ColorDrawable@fbb1374";
         if (a==colores[0]){
+
             Toast.makeText(this,btn1.getBackground().toString(),Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(this,"mal",Toast.LENGTH_LONG).show();
@@ -97,6 +98,7 @@ public class Juego extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                btn1.getBackground();
                 intento--;
                 perdida++;
                 perdidas.setText(perdida);
@@ -104,4 +106,5 @@ public class Juego extends AppCompatActivity {
             }
         }.start();
     }
+
 }

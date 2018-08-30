@@ -20,7 +20,7 @@ public class JuegoPersonalizado extends AppCompatActivity {
         numero=findViewById(R.id.numero);
         tiempo=findViewById(R.id.tiempo);
 
-        numer=String.valueOf(getIntent().getExtras().getString("tipo"));
+        numer=String.valueOf(getIntent().getExtras().getString("configuracion"));
         time=String.valueOf(getIntent().getExtras().getString("tiempo"));
 
         tiempo.setText(time);

@@ -125,4 +125,5 @@
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textocolor" />
+
 </android.support.constraint.ConstraintLayout>
