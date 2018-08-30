@@ -29,7 +29,7 @@ public class JuegoPersonalizado2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego_personalizado2);
 
-        duracion=getIntent().getExtras().getInt("duracion");
+        duracion=getIntent().getExtras().getInt("intentos");
         time=getIntent().getExtras().getInt("tiempo");
 
         tiempo1.setText(time);
