@@ -20,8 +20,8 @@ public class Juego extends AppCompatActivity {
     TextView texto,tiempo,intentos,ganadas,perdidas,comparar;
     Button btn1,btn2,btn3,btn4;
     CountDownTimer countDownTimer,countDownTimer1;
-    int aciertos;
-    int perdida;
+    int aciertos=0;
+    int perdida=0;
     int intento=3;
 
     @Override
@@ -82,8 +82,8 @@ public class Juego extends AppCompatActivity {
                 String a,b;
                 intento--;
                 perdida++;
-                a=String.valueOf(intento);
-                b=String.valueOf(perdida);
+                b=String.valueOf(intento);
+                a=String.valueOf(perdida);
                 perdidas.setText("Perdidos: "+a);
                 intentos.setText("Intentos: "+b);
                 duraciondecambio();
@@ -133,8 +133,8 @@ public class Juego extends AppCompatActivity {
                 texto.setTextColor(Color.parseColor(colores[Rando]));
                 comparar.setText(colores[Rando]);
                 String a,b;
-                a=String.valueOf(intento);
-                b=String.valueOf(perdida);
+                b=String.valueOf(intento);
+                a=String.valueOf(perdida);
                 perdidas.setText("Perdidos: "+a);
                 intentos.setText("Intentos: "+b);
                 duraciondecambio();
@@ -184,8 +184,8 @@ public class Juego extends AppCompatActivity {
                 String a,b;
                 intento--;
                 perdida++;
-                a=String.valueOf(intento);
-                b=String.valueOf(perdida);
+                b=String.valueOf(intento);
+                a=String.valueOf(perdida);
                 perdidas.setText("Perdidos: "+a);
                 intentos.setText("Intentos: "+b);
                 duraciondecambio();
@@ -235,8 +235,8 @@ public class Juego extends AppCompatActivity {
                 intento--;
                 perdida++;
                 String a,b;
-                a=String.valueOf(intento);
-                b=String.valueOf(perdida);
+                b=String.valueOf(intento);
+                a=String.valueOf(perdida);
                 perdidas.setText("Perdidos: "+a);
                 intentos.setText("Intentos: "+b);
                 duraciondecambio();
@@ -375,5 +375,14 @@ public class Juego extends AppCompatActivity {
                 }
             }
         }.start();
+    }
+
+    public void onBackPressed(){
+        countDownTimer.cancel();
+        countDownTimer1.cancel();
+        Intent intent
+                = new Intent(this,Inicio.class);
+        startActivity(intent);
+        finish();
     }
 }
