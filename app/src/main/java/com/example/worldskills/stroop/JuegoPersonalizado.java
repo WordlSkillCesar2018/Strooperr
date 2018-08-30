@@ -32,8 +32,6 @@ public class JuegoPersonalizado extends AppCompatActivity {
         duracion=getIntent().getExtras().getInt("duracion");
         time=getIntent().getExtras().getInt("tiempo");
 
-        tiempo1.setText(time);
-        numero.setText(numer);
         //configurar=Integer.parseInt(String.valueOf(getIntent().getExtras().getInt("tipo")));
 
         texto = findViewById(R.id.textocolor);
