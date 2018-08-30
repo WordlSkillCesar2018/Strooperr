@@ -36,7 +36,7 @@ public class Configurar extends AppCompatActivity {
         String configuracion = editText.getText().toString();
         String tiempo=editText2.getText().toString();
         Intent intent=new Intent(this, JuegoPersonalizado.class);
-        intent.putExtra("tipo",configuracion);
+        intent.putExtra("tipo",configurar);
         intent.putExtra("configuracion", configuracion);
         intent.putExtra("tiempo", tiempo);
         startActivity(intent);
