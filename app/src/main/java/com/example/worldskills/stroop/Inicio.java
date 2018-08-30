@@ -46,7 +46,6 @@ public class Inicio extends AppCompatActivity {
         if (id == R.id.configuracion) {
             Intent intent=new Intent(this, Personalizado.class);
             startActivity(intent);
-            return true;
         }
 
         return super.onOptionsItemSelected(item);

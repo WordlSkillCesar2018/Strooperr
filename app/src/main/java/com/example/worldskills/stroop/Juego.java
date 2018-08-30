@@ -76,15 +76,16 @@ public class Juego extends AppCompatActivity {
                 countDownTimer1.cancel();
             }else{
                 countDownTimer1.cancel();
-                countDownTimer1.start();
                 texto.setText(colortext[Random]);
                 texto.setTextColor(Color.parseColor(colores[Rando]));
                 comparar.setText(colores[Rando]);
                 String a,b;
+                intento--;
+                perdida++;
                 a=String.valueOf(intento);
                 b=String.valueOf(perdida);
-                perdidas.setText(a);
-                intentos.setText(b);
+                perdidas.setText("Perdidos: "+a);
+                intentos.setText("Intentos: "+b);
                 duraciondecambio();
             }
         }
@@ -126,15 +127,16 @@ public class Juego extends AppCompatActivity {
                 countDownTimer1.cancel();
             }else{
                 countDownTimer1.cancel();
-                countDownTimer1.start();
+                intento--;
+                perdida++;
                 texto.setText(colortext[Random]);
                 texto.setTextColor(Color.parseColor(colores[Rando]));
                 comparar.setText(colores[Rando]);
                 String a,b;
                 a=String.valueOf(intento);
                 b=String.valueOf(perdida);
-                perdidas.setText("Perdidos: "+perdida);
-                intentos.setText("Intentos: "+intento);
+                perdidas.setText("Perdidos: "+a);
+                intentos.setText("Intentos: "+b);
                 duraciondecambio();
             }
         }
@@ -176,15 +178,16 @@ public class Juego extends AppCompatActivity {
                 countDownTimer1.cancel();
             }else{
                 countDownTimer1.cancel();
-                countDownTimer1.start();
                 texto.setText(colortext[Random]);
                 texto.setTextColor(Color.parseColor(colores[Rando]));
                 comparar.setText(colores[Rando]);
                 String a,b;
+                intento--;
+                perdida++;
                 a=String.valueOf(intento);
                 b=String.valueOf(perdida);
-                perdidas.setText("Perdidos: "+perdida);
-                intentos.setText("Intentos: "+intento);
+                perdidas.setText("Perdidos: "+a);
+                intentos.setText("Intentos: "+b);
                 duraciondecambio();
             }
         }
@@ -226,7 +229,6 @@ public class Juego extends AppCompatActivity {
                 countDownTimer1.cancel();
             }else{
                 countDownTimer1.cancel();
-                countDownTimer1.start();
                 texto.setText(colortext[Random]);
                 texto.setTextColor(Color.parseColor(colores[Rando]));
                 comparar.setText(colores[Rando]);
@@ -235,8 +237,8 @@ public class Juego extends AppCompatActivity {
                 String a,b;
                 a=String.valueOf(intento);
                 b=String.valueOf(perdida);
-                perdidas.setText("Perdidos: "+perdida);
-                intentos.setText("Intentos: "+intento);
+                perdidas.setText("Perdidos: "+a);
+                intentos.setText("Intentos: "+b);
                 duraciondecambio();
             }
         }
@@ -348,18 +350,19 @@ public class Juego extends AppCompatActivity {
                 b=String.valueOf(intento);
                 perdidas.setText("Perdidos: "+a);
                 intentos.setText("Intentos: "+b);
-                if (perdida>2){
-                    Intent intent = new Intent(Juego.this,Resultado.class);
-                    intent.putExtra("ganada",aciertos);
-                    intent.putExtra("perdida",perdida);
-                    intent.putExtra("intentos",intento);
-                    startActivity(intent);
-                   countDownTimer.cancel();
-                   countDownTimer1.cancel();
-                   finish();
-                }else{
-                    duraciondecambio();
-                }
+                countDownTimer1.cancel();
+                    if (perdida>2){
+                        Intent intent = new Intent(Juego.this,Resultado.class);
+                        intent.putExtra("ganada",aciertos);
+                        intent.putExtra("perdida",perdida);
+                        intent.putExtra("intentos",intento);
+                        startActivity(intent);
+                       countDownTimer.cancel();
+                       countDownTimer1.cancel();
+                       finish();
+                    }else{
+                        duraciondecambio();
+                    }
 
                 if (Randon==1){
                     cambioposicion1();
