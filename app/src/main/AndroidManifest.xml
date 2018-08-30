@@ -24,7 +24,8 @@
         <activity android:name=".Configurar" />
         <activity android:name=".JuegoPersonalizado" />
         <activity android:name=".Resultado" />
-        <activity android:name=".JuegoPersonalizado2"></activity>
+        <activity android:name=".JuegoPersonalizado2" />
+        <activity android:name=".Ver_resultados"></activity>
     </application>
 
 </manifest>

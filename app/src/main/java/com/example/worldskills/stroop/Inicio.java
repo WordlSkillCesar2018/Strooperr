@@ -41,8 +41,8 @@ public class Inicio extends AppCompatActivity {
             startActivity(intent);
         }
         if (id == R.id.verpuntajes) {
-            return true;
-        }
+            Intent intent = new Intent(this,Ver_resultados.class);
+            startActivity(intent);        }
         if (id == R.id.configuracion) {
             Intent intent=new Intent(this, Personalizado.class);
             startActivity(intent);

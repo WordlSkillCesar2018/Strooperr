@@ -63,6 +63,8 @@ public class Juego extends AppCompatActivity {
             comparar.setText(colores[Rando]);
             aciertos++;
             ganadas.setText("Ganadas: "+aciertos);
+            perdidas.setText("Perdidos: "+perdida);
+            intentos.setText("Intentos: "+intento);
         }else{
             if (perdida>2) {
                 Intent intent = new Intent(Juego.this,Resultado.class);
@@ -111,6 +113,8 @@ public class Juego extends AppCompatActivity {
             comparar.setText(colores[Rando]);
             aciertos++;
             ganadas.setText("Ganadas: "+aciertos);
+            perdidas.setText("Perdidos: "+perdida);
+            intentos.setText("Intentos: "+intento);
         }else{
             if (perdida>2) {
                 Intent intent = new Intent(Juego.this,Resultado.class);
@@ -129,8 +133,8 @@ public class Juego extends AppCompatActivity {
                 String a,b;
                 a=String.valueOf(intento);
                 b=String.valueOf(perdida);
-                perdidas.setText(a);
-                intentos.setText(b);
+                perdidas.setText("Perdidos: "+perdida);
+                intentos.setText("Intentos: "+intento);
                 duraciondecambio();
             }
         }
@@ -159,6 +163,8 @@ public class Juego extends AppCompatActivity {
             comparar.setText(colores[Rando]);
             aciertos++;
             ganadas.setText("Ganadas: "+aciertos);
+            perdidas.setText("Perdidos: "+perdida);
+            intentos.setText("Intentos: "+intento);
         }else{
             if (perdida>2) {
                 Intent intent = new Intent(Juego.this,Resultado.class);
@@ -177,8 +183,8 @@ public class Juego extends AppCompatActivity {
                 String a,b;
                 a=String.valueOf(intento);
                 b=String.valueOf(perdida);
-                perdidas.setText(a);
-                intentos.setText(b);
+                perdidas.setText("Perdidos: "+perdida);
+                intentos.setText("Intentos: "+intento);
                 duraciondecambio();
             }
         }
@@ -207,6 +213,8 @@ public class Juego extends AppCompatActivity {
             comparar.setText(colores[Rando]);
             aciertos++;
             ganadas.setText("Ganadas: "+aciertos);
+            perdidas.setText("Perdidos: "+perdida);
+            intentos.setText("Intentos: "+intento);
         }else{
             if (perdida>2) {
                 Intent intent = new Intent(Juego.this,Resultado.class);
@@ -227,8 +235,8 @@ public class Juego extends AppCompatActivity {
                 String a,b;
                 a=String.valueOf(intento);
                 b=String.valueOf(perdida);
-                perdidas.setText(a);
-                intentos.setText(b);
+                perdidas.setText("Perdidos: "+perdida);
+                intentos.setText("Intentos: "+intento);
                 duraciondecambio();
             }
         }
@@ -352,6 +360,7 @@ public class Juego extends AppCompatActivity {
                 }else{
                     duraciondecambio();
                 }
+
                 if (Randon==1){
                     cambioposicion1();
                 }else if (Randon==2){

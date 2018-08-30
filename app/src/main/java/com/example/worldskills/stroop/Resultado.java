@@ -1,9 +1,11 @@
 package com.example.worldskills.stroop;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,9 +28,9 @@ public class Resultado extends AppCompatActivity {
         ganadas = findViewById(R.id.textView5);
         perdidas = findViewById(R.id.textView7);
         intentos = findViewById(R.id.textView8);
-        intentos.setText(c);
-        ganadas.setText(a);
-        perdidas.setText(b);
+        intentos.setText("Intentos: "+c);
+        ganadas.setText("Ganadas"+a);
+        perdidas.setText("perdidas"+b);
         SqliteOpenHelper sqliteOpenHelper = new SqliteOpenHelper(getApplicationContext());
         SQLiteDatabase db = sqliteOpenHelper.getWritableDatabase();
         if(db!=null){
@@ -38,5 +40,10 @@ public class Resultado extends AppCompatActivity {
     }
 
 
-
+    public void volver(View view) {
+        Intent intent
+                 = new Intent(this,Inicio.class);
+        startActivity(intent);
+        finish();
+    }
 }
