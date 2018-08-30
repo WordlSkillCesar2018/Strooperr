@@ -44,6 +44,8 @@ public class Inicio extends AppCompatActivity {
             return true;
         }
         if (id == R.id.configuracion) {
+            Intent intent=new Intent(this, Personalizado.class);
+            startActivity(intent);
             return true;
         }
 

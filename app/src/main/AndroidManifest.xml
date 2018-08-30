@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".Juego" />
         <activity android:name=".Personalizado" />
-        <activity android:name=".Configurar"></activity>
+        <activity android:name=".Configurar" />
+        <activity android:name=".JuegoPersonalizado"></activity>
     </application>
 
 </manifest>

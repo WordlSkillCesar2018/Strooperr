@@ -33,8 +33,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,31 +43,47 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="112dp"
+        android:layout_marginLeft="113dp"
+        android:layout_marginRight="112dp"
+        android:layout_marginStart="113dp"
         android:layout_marginTop="47dp"
+        android:onClick="siguiente"
         android:text="Siguiente"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        tools:layout_editor_absoluteX="113dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginEnd="9dp"
 
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="44dp"
         android:text="Cantidad de Tiempo por Palabras "
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:layout_editor_absoluteX="9dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="53dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginStart="54dp"
         android:layout_marginTop="37dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Tiempo en Milisegundos"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:layout_editor_absoluteX="54dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </android.support.constraint.ConstraintLayout>
