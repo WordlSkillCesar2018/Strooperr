@@ -106,6 +106,7 @@
         android:layout_marginBottom="21dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:text=""
         android:background="#FF22FF00"
         android:onClick="color4"
         app:layout_constraintBottom_toBottomOf="parent"
