@@ -70,8 +70,9 @@ public class Juego extends AppCompatActivity {
 
         }
 
-       // btn2.setBackground(android.graphics.drawable.Drawable);
     }
+
+
 
     public void duraciontiempocompleto(){
         countDownTimer = new CountDownTimer(30000,10) {
