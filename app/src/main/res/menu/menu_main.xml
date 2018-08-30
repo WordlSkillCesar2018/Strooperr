@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.worldskills.stroop.Inicio">
+    <item
+        android:id="@+id/iniciarjuego"
+        android:orderInCategory="100"
+        android:title="Iniciar Juego"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/verpuntajes"
+        android:orderInCategory="100"
+        android:title="Ver puntajes"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/configuracion"
+        android:orderInCategory="100"
+        android:title="Configuración"
+        app:showAsAction="never" />
+
+</menu>
