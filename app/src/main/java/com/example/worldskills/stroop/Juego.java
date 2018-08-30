@@ -2,6 +2,7 @@ package com.example.worldskills.stroop;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -13,16 +14,14 @@ import android.widget.Toast;
 
 public class Juego extends AppCompatActivity {
 
-    String[] colores = new String[] {"android.graphics.drawable.ColorDrawable@fbb1374",
-            "#FF0022FF","#FFFF0004","#FF22FF00"};
+    String[] colores = new String[] {"yellow","blue","red","green"};
     String[] colortext = new String[]{"Amarillo","Azul","Rojo","Verde"};
-    TextView texto,tiempo,intentos,ganadas,perdidas;
-    int random = (int) (Math.random()*4);
+    TextView texto,tiempo,intentos,ganadas,perdidas,comparar;
     Button btn1,btn2,btn3,btn4;
     CountDownTimer countDownTimer,countDownTimer1;
     int aciertos;
     int perdida;
-    int intento;
+    int intento=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class Juego extends AppCompatActivity {
         ganadas = findViewById(R.id.textView3);
         perdidas = findViewById(R.id.textView4);
         intentos = findViewById(R.id.textView2);
-        texto.setText(colortext[random]);
+        texto.setText(colortext[0]);
         btn1 = findViewById(R.id.button4);
         btn2 = findViewById(R.id.button2);
         btn3 = findViewById(R.id.button);
@@ -43,36 +42,178 @@ public class Juego extends AppCompatActivity {
         perdidas.setText("0");
         intentos.setText("3");
         ganadas.setText("0");
+       texto.setTextColor(Color.parseColor(colores[0]));
+       comparar = findViewById(R.id.textView6);
+       comparar.setText(colores[0]);
     }
 
     public void color1(View view) {
-        cambios();
+        String comparacion = comparar.getText().toString();
+        int Random = (int) (Math.random() * 3);
+        int Rando = (int) (Math.random() * 3);
+        if (comparacion.equals("yellow")){
+            aciertos++;
+            countDownTimer.cancel();
+            countDownTimer1.start();
+            texto.setText(colortext[Random]);
+            texto.setTextColor(Color.parseColor(colores[Rando]));
+            comparar.setText(colores[Rando]);
+        }else{
+            if (perdida>2) {
+
+            }else{
+                countDownTimer1.cancel();
+                countDownTimer1.start();
+                texto.setText(colortext[Random]);
+                texto.setTextColor(Color.parseColor(colores[Rando]));
+                comparar.setText(colores[Rando]);
+                String a,b;
+                a=String.valueOf(intento);
+                b=String.valueOf(perdida);
+                perdidas.setText(a);
+                intentos.setText(b);
+                duraciontiempocompleto();
+            }
+        }
     }
 
     public void color2(View view) {
-        cambios();
+        String comparacion = comparar.getText().toString();
+        int Random = (int) (Math.random() * 3);
+        int Rando = (int) (Math.random() * 3);
+        if (comparacion.equals("blue")){
+            aciertos++;
+            countDownTimer1.cancel();
+            countDownTimer1.start();
+            texto.setText(colortext[Random]);
+            texto.setTextColor(Color.parseColor(colores[Rando]));
+            comparar.setText(colores[Rando]);
+        }else{
+            if (perdida>2) {
+
+            }else{
+                countDownTimer1.cancel();
+                countDownTimer1.start();
+                texto.setText(colortext[Random]);
+                texto.setTextColor(Color.parseColor(colores[Rando]));
+                comparar.setText(colores[Rando]);
+                String a,b;
+                a=String.valueOf(intento);
+                b=String.valueOf(perdida);
+                perdidas.setText(a);
+                intentos.setText(b);
+                duraciontiempocompleto();
+            }
+        }
     }
 
     public void color3(View view) {
-        cambios();
+        String comparacion = comparar.getText().toString();
+        int Random = (int) (Math.random() * 3);
+        int Rando = (int) (Math.random() * 3);
+        if (comparacion.equals("red")){
+            aciertos++;
+            countDownTimer1.cancel();
+            countDownTimer1.start();
+            texto.setText(colortext[Random]);
+            texto.setTextColor(Color.parseColor(colores[Rando]));
+            comparar.setText(colores[Rando]);
+        }else{
+            if (perdida>2) {
+
+            }else{
+                countDownTimer1.cancel();
+                countDownTimer1.start();
+                texto.setText(colortext[Random]);
+                texto.setTextColor(Color.parseColor(colores[Rando]));
+                comparar.setText(colores[Rando]);
+                String a,b;
+                a=String.valueOf(intento);
+                b=String.valueOf(perdida);
+                perdidas.setText(a);
+                intentos.setText(b);
+                duraciontiempocompleto();
+            }
+        }
     }
 
     public void color4(View view) {
-        cambios();
-    }
-    @SuppressLint("NewApi")
-    public void cambios(){
-        String a = "android.graphics.drawable.ColorDrawable@fbb1374";
-        if (a==colores[0]){
-            Toast.makeText(this,btn1.getBackground().toString(),Toast.LENGTH_LONG).show();
+        String comparacion = comparar.getText().toString();
+        int Random = (int) (Math.random() * 3);
+        int Rando = (int) (Math.random() * 3);
+        if (comparacion.equals("green")){
+            aciertos++;
+            countDownTimer1.cancel();
+            countDownTimer1.start();
+            texto.setText(colortext[Random]);
+            texto.setTextColor(Color.parseColor(colores[Rando]));
+            comparar.setText(colores[Rando]);
         }else{
-            Toast.makeText(this,"mal",Toast.LENGTH_LONG).show();
+            if (perdida>2) {
 
+            }else{
+                countDownTimer1.cancel();
+                countDownTimer1.start();
+                texto.setText(colortext[Random]);
+                texto.setTextColor(Color.parseColor(colores[Rando]));
+                comparar.setText(colores[Rando]);
+                intento--;
+                perdida++;
+                String a,b;
+                a=String.valueOf(intento);
+                b=String.valueOf(perdida);
+                perdidas.setText(a);
+                intentos.setText(b);
+                duraciontiempocompleto();
+            }
         }
+    }
+
+    public void cambioposicion1(){
+        float a = (float) 24.000;
+        float b = (float) 574.500;
+        float c = (float) 261.000;
+        float d = (float) 466.500;
+        btn1.setX(a);
+        btn1.setY(b);
+        btn2.setX(a);
+        btn2.setY(d);
+        btn3.setX(c);
+        btn3.setY(d);
+        btn4.setX(c);
+        btn4.setY(b);
 
     }
 
+    public void cambioposicion2(){
+        float a = (float) 24.000;
+        float b = (float) 574.500;
+        float c = (float) 261.000;
+        float d = (float) 466.500;
+        btn1.setX(c);
+        btn1.setY(d);
+        btn2.setX(a);
+        btn2.setY(d);
+        btn3.setX(c);
+        btn3.setY(b);
+        btn4.setX(a);
+        btn4.setY(b);
+    }
 
+    public void cambioposicion3(){
+        float a = (float) 24.000;
+        float b = (float) 574.500;
+        float c = (float) 261.000;
+        float d = (float) 466.500;
+        btn1.setX(a);
+        btn1.setY(d);
+        btn2.setX(c);
+        btn2.setY(d);
+        btn3.setX(a);
+        btn3.setY(b);
+        btn4.setX(c);
+        btn4.setY(b);
+    }
 
     public void duraciontiempocompleto(){
         countDownTimer = new CountDownTimer(30000,10) {
@@ -99,8 +240,15 @@ public class Juego extends AppCompatActivity {
             public void onFinish() {
                 intento--;
                 perdida++;
-                perdidas.setText(perdida);
-                intentos.setText(intento);
+                String a,b;
+                a=String.valueOf(intento);
+                b=String.valueOf(perdida);
+                perdidas.setText(a);
+                intentos.setText(b);
+                if (intento>2){
+                 //   Intent intent = new Intent(this,Resultado);
+                   // startActivity(intent);
+                }
             }
         }.start();
     }
