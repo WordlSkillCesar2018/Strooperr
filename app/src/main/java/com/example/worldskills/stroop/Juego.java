@@ -2,6 +2,7 @@ package com.example.worldskills.stroop;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
@@ -45,12 +46,14 @@ public class Juego extends AppCompatActivity {
        texto.setTextColor(Color.parseColor(colores[0]));
        comparar = findViewById(R.id.textView6);
        comparar.setText(colores[0]);
+       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     public void color1(View view) {
         String comparacion = comparar.getText().toString();
         int Random = (int) (Math.random() * 3);
         int Rando = (int) (Math.random() * 3);
+        int Randon = (int) (Math.random()*3);
         if (comparacion.equals("yellow")){
             aciertos++;
             countDownTimer.cancel();
@@ -75,12 +78,20 @@ public class Juego extends AppCompatActivity {
                 duraciontiempocompleto();
             }
         }
+        if (Randon==1){
+            cambioposicion1();
+        }else if (Randon==2){
+            cambioposicion2();
+        }else if (Randon==3){
+            cambioposicion3();
+        }
     }
 
     public void color2(View view) {
         String comparacion = comparar.getText().toString();
         int Random = (int) (Math.random() * 3);
         int Rando = (int) (Math.random() * 3);
+        int Randon = (int) (Math.random()*3);
         if (comparacion.equals("blue")){
             aciertos++;
             countDownTimer1.cancel();
@@ -105,12 +116,20 @@ public class Juego extends AppCompatActivity {
                 duraciontiempocompleto();
             }
         }
+        if (Randon==1){
+            cambioposicion1();
+        }else if (Randon==2){
+            cambioposicion2();
+        }else if (Randon==3){
+            cambioposicion3();
+        }
     }
 
     public void color3(View view) {
         String comparacion = comparar.getText().toString();
         int Random = (int) (Math.random() * 3);
         int Rando = (int) (Math.random() * 3);
+        int Randon = (int) (Math.random()*3);
         if (comparacion.equals("red")){
             aciertos++;
             countDownTimer1.cancel();
@@ -120,7 +139,9 @@ public class Juego extends AppCompatActivity {
             comparar.setText(colores[Rando]);
         }else{
             if (perdida>2) {
-
+                Intent intent = new Intent();
+                startActivity(intent);
+                finish();
             }else{
                 countDownTimer1.cancel();
                 countDownTimer1.start();
@@ -135,12 +156,20 @@ public class Juego extends AppCompatActivity {
                 duraciontiempocompleto();
             }
         }
+        if (Randon==1){
+            cambioposicion1();
+        }else if (Randon==2){
+            cambioposicion2();
+        }else if (Randon==3){
+            cambioposicion3();
+        }
     }
 
     public void color4(View view) {
         String comparacion = comparar.getText().toString();
         int Random = (int) (Math.random() * 3);
         int Rando = (int) (Math.random() * 3);
+        int Randon = (int) (Math.random()*3);
         if (comparacion.equals("green")){
             aciertos++;
             countDownTimer1.cancel();
@@ -166,6 +195,13 @@ public class Juego extends AppCompatActivity {
                 intentos.setText(b);
                 duraciontiempocompleto();
             }
+        }
+        if (Randon==1){
+            cambioposicion1();
+        }else if (Randon==2){
+            cambioposicion2();
+        }else if (Randon==3){
+            cambioposicion3();
         }
     }
 
